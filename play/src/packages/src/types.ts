@@ -66,6 +66,13 @@ export const selectTagsProps = buildProps({
    * @description 选中时标签的文字颜色，以tn开头使用图鸟内置的颜色
    */
   activeColor: String,
+  /**
+   * @description 值发生修改时是否触发表单验证
+   */
+  validateEvent: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 export const selectTagsEmits = {

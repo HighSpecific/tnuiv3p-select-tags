@@ -1,8 +1,10 @@
-import { ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import {
   CHANGE_EVENT,
   UPDATE_MODEL_EVENT,
 } from '@tuniao/tnui-vue3-uniapp/constants'
+import { debugWarn } from '@tuniao/tnui-vue3-uniapp/utils'
+import { useFormItem } from '@tuniao/tnui-vue3-uniapp/components/form'
 
 import type { SetupContext } from 'vue'
 import type {
@@ -16,6 +18,7 @@ export const useSelectTags = (
   props: SelectTagsProps,
   emits: SetupContext<SelectTagsEmits>['emit']
 ) => {
+  const { formItem } = useFormItem()
   // 当前选中的的标签值
   const selectTagsValue = ref<SelectTagsModelValue[]>(props.modelValue)
   watch(
@@ -47,8 +50,15 @@ export const useSelectTags = (
     if (props?.modelValue === undefined || !props?.modelValue?.length)
       selectTagsValue.value = value
     emits(UPDATE_MODEL_EVENT, value)
-    emits(CHANGE_EVENT, value)
     emits('click', index, activeStatus, item)
+    nextTick(() => {
+      emits(CHANGE_EVENT, value)
+      if (props.validateEvent) {
+        formItem?.validate?.('change').catch((err) => {
+          debugWarn(err)
+        })
+      }
+    })
   }
 
   return {
