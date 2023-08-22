@@ -50,11 +50,13 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
-        "setting" : {
-            "urlCheck" : false
-        },
-        "usingComponents" : true
+      "appid": "wxd4296f570b8b39c9",
+      "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "ignoreDevUnusedFiles": false
+      },
+      "usingComponents": true
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -65,7 +67,7 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-    "uniStatistics": {  
+    "uniStatistics": {
         "enable": false
     },
     "vueVersion" : "3"

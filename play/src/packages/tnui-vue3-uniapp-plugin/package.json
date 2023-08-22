@@ -1,6 +1,6 @@
 {
   "name": "tnuiv3p-plugin",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "TuniaoUI vue3 uniapp 插件",
   "keywords": [
     "tn",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tuniaoTech/tuniaoui-rc-vue3-uniapp"
+    "url": "https://github.com/HighSpecific/tnuiv3p-select-tags"
   },
   "bugs": {
-    "url": "https://github.com/tuniaoTech/tuniaoui-rc-vue3-uniapp/issues"
+    "url": "https://github.com/HighSpecific/tnuiv3p-select-tags/issues"
   },
   "peerDependencies": {
     "@tuniao/tn-icon": "^1.4.0",
